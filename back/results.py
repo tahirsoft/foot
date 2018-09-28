@@ -16,3 +16,17 @@ def chance_to_win(team_1, team_2):
     team_1_chance = round(team_1_points/sum_points, 2)
     team_2_chance = round(team_2_points/sum_points, 2)
     return team_1_chance, team_2_chance
+
+
+def game(team_1, team_2):
+    score = goals()
+    p1, p2 = chance_to_win(team_1, team_2)
+    if p1 >= p2:
+        sorted(score, reverse=True)
+    else:
+        sorted(score)
+    final_score = np.random.choice(score, 2, p=[p1, p2])
+    return team_1, final_score[0], team_2, final_score[1]
+
+
+p
