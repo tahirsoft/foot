@@ -11,7 +11,7 @@ country_points = parsed_html.find_all("td", class_="_points")
 
 for link, points_tag in zip(links, country_points):
     flag, country = link.img.attrs["src"], link.img.attrs["alt"]
-    points = points_tag.contents[0]
+    points = points_tag.contents[0].replace(' ', '')
     countries[country] = {"flag": flag, "points": points}
 
 with open('data.txt', 'w') as f:
