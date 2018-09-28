@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="foot.css">
+    <script src="https://unpkg.com/vue"></script>
+
+    <title>Front</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="https://api.fifa.com/api/v1/picture/tournaments-sq-4/254645_w" width="150" height="150" class="d-inline-block align-top">
+        </a>
+    </nav>
+    <div id="app">
+        <div id="tabs" class="container">
+
+            <div class="tabs">
+                <a v-on:click="activetab='A'" v-bind:class="[ activetab === 'A' ? 'active' : '' ]">Group A</a>
+                <a v-on:click="activetab='B'" v-bind:class="[ activetab === 'B' ? 'active' : '' ]">Group B</a>
+                <a v-on:click="activetab='C'" v-bind:class="[ activetab === 'C' ? 'active' : '' ]">Group C</a>
+                <a v-on:click="activetab='D'" v-bind:class="[ activetab === 'D' ? 'active' : '' ]">Group D</a>
+                <a v-on:click="activetab='E'" v-bind:class="[ activetab === 'E' ? 'active' : '' ]">Group E</a>
+                <a v-on:click="activetab='F'" v-bind:class="[ activetab === 'F' ? 'active' : '' ]">Group F</a>
+                <a v-on:click="activetab='G'" v-bind:class="[ activetab === 'G' ? 'active' : '' ]">Group G</a>
+                <a v-on:click="activetab='H'" v-bind:class="[ activetab === 'H' ? 'active' : '' ]">Group H</a>
+                <a v-on:click="activetab='1/8'" v-bind:class="[ activetab === '1/8' ? 'active' : '' ]">Stage 1/8</a>
+                <a v-on:click="activetab='1/4'" v-bind:class="[ activetab === '1/4' ? 'active' : '' ]">Stage 1/4</a>
+                <a v-on:click="activetab='1/2'" v-bind:class="[ activetab === '1/2' ? 'active' : '' ]">Stage 1/2</a>
+                <a v-on:click="activetab='final'" v-bind:class="[ activetab === 'final' ? 'active' : '' ]">Final</a>
+            </div>
+
+            <div class="content">
+                <div v-if="activetab === 'A'" class="tabcontent">
+                    Content for Group A
+                </div>
+                <div v-if="activetab === 'B'" class="tabcontent">
+                    Content for Group B
+                </div>
+                <div v-if="activetab === 'C'" class="tabcontent">
+                    Content for Group C
+                </div>
+                <div v-if="activetab === 'D'" class="tabcontent">
+                    Content for Group D
+                </div>
+                <div v-if="activetab === 'E'" class="tabcontent">
+                    Content for Group E
+                </div>
+                <div v-if="activetab === 'F'" class="tabcontent">
+                    Content for Group F
+                </div>
+                <div v-if="activetab === 'G'" class="tabcontent">
+                    Content for Group G
+                </div>
+                <div v-if="activetab === 'H'" class="tabcontent">
+                    Content for Group H
+                </div>
+                <div v-if="activetab === '1/8'" class="tabcontent">
+                    Content for Stage 1/8
+                </div>
+                <div v-if="activetab === '1/4'" class="tabcontent">
+                    Content for Stage 1/4
+                </div>
+                <div v-if="activetab === '1/2'" class="tabcontent">
+                    Content for Stage 1/2
+                </div>
+                <div v-if="activetab === 'final'" class="tabcontent">
+                    Content for Final
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="foot.js"></script>
+</body>
+
+</html>
