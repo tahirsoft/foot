@@ -4,8 +4,8 @@ from parser import countries
 
 
 def goals():
-    score = np.random.choice(8, 2, p=[0.28, 0.25, 0.15, 0.12,
-                                      0.1, 0.05, 0.04, 0.01])
+    score = np.random.choice(8, 2, p=[0.27, 0.35, 0.22, 0.13, 0.021,
+                                      0.0056, 0.002, 0.0014])
     return score
 
 
@@ -22,11 +22,8 @@ def game(team_1, team_2):
     score = goals()
     p1, p2 = chance_to_win(team_1, team_2)
     if p1 >= p2:
-        sorted(score, reverse=True)
+        score = sorted(score, reverse=True)
     else:
-        sorted(score)
-    final_score = np.random.choice(score, 2, p=[p1, p2])
+        score = sorted(score)
+    final_score = np.random.choice(score, 2, replace=False, p=[p1, p2])
     return team_1, final_score[0], team_2, final_score[1]
-
-
-p
