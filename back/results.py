@@ -120,3 +120,35 @@ def final_stage_results(teams_grid: list) -> dict:
             i["penalty"] = f'{penalty[0]}:{penalty[1]}'
 
     return results
+
+
+def kick_out(results: dict) -> list:
+    winners = []
+    losers = []
+    for i in results:
+        team_1, team_2, *penalty = i.keys()
+
+        if i[team_1] == i[team_2]:
+            penalty_result = i[penalty[0]]
+
+            if penalty_result[0] > penalty_result[2]:
+                winners.append(team_1)
+
+            else:
+                winners.append(team_2)
+
+        elif i[team_1] > i[team_2]:
+            winners.append(team_1)
+
+        else:
+            winners.append(team_2)
+
+        if len(results) == 2:
+            if team_1 in winners:
+                losers.append(team_2)
+            else:
+                losers.append(team_1)
+    if losers:
+        return winners, losers
+
+    return winners
