@@ -41,3 +41,9 @@ def game(team_1: str, team_2: str) -> dict:
 
     final_score = np.random.choice(score, 2, replace=False, p=[p1, p2])
     return {team_1: final_score[0], team_2: final_score[1]}
+
+
+def games_in_group(group: str) -> list:
+    countries = table[group].keys()
+    group_games = combinations(countries, 2)
+    return group_games
