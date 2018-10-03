@@ -16,7 +16,8 @@ def goals() -> list:
 
 
 def penalty_goals() -> list:
-    score = np.randome.choice(6, 2, p=[0.001, 0.02, 0.079, 0.1, 0.4, 0.4])
+    score = np.random.choice(6, 2, replace=False, p=[0.001, 0.01, 0.07,
+                                                     0.119, 0.4, 0.4])
     return score
 
 
@@ -101,4 +102,8 @@ def final_staging():
                 mini_table[group_name + str(place)] = k
                 place += 1
 
-    return mini_table
+    teams = sum(
+        [[mini_table[i[0]], mini_table[i[1]]] for i in final_grid],
+        []
+    )
+    return teams
