@@ -107,3 +107,16 @@ def final_staging():
         []
     )
     return teams
+
+
+def final_stage_results(teams_grid: list) -> dict:
+    results = [game(teams_grid[i], teams_grid[i+1])
+               for i in range(0, len(teams_grid), 2)]
+
+    for i in results:
+
+        if len(set(i.values())) == 1:
+            penalty = penalty_goals()
+            i["penalty"] = f'{penalty[0]}:{penalty[1]}'
+
+    return results
