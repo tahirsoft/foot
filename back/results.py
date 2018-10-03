@@ -152,3 +152,20 @@ def kick_out(results: dict) -> list:
         return winners, losers
 
     return winners
+
+
+def final_stage_games():
+    teams_grid_one_eighth = final_staging()
+    results_one_eighth = final_stage_results(teams_grid_one_eighth)
+
+    teams_grid_quaterfinal = kick_out(results_one_eighth)
+    results_quaterfinal = final_stage_results(teams_grid_quaterfinal)
+
+    teams_grid_semifinal = kick_out(results_quaterfinal)
+    results_semifinal = final_stage_results(teams_grid_semifinal)
+
+    finalists, third_placed = kick_out(results_semifinal)
+    third_place = final_stage_results(third_placed)
+    final = final_stage_results(finalists)
+
+    return final, third_place
