@@ -47,3 +47,10 @@ def games_in_group(group: str) -> list:
     countries = table[group].keys()
     group_games = combinations(countries, 2)
     return group_games
+
+    
+def group_games_results(group: str) -> list:
+    group_games = games_in_group(group)
+    games_results = [game(i[0], i[1]) for i in group_games]
+    shuffle(games_results)
+    return games_results
