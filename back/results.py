@@ -48,9 +48,38 @@ def games_in_group(group: str) -> list:
     group_games = combinations(countries, 2)
     return group_games
 
-    
+
 def group_games_results(group: str) -> list:
     group_games = games_in_group(group)
     games_results = [game(i[0], i[1]) for i in group_games]
     shuffle(games_results)
     return games_results
+
+
+def group_stats(group: str):
+    for result in group_games_results(group):
+        team_1, team_2 = result.keys()
+        table[group][team_1]["games"] += 1
+        table[group][team_2]["games"] += 1
+        table[group][team_1]["gf"] += result[team_1]
+        table[group][team_2]["gf"] += result[team_2]
+        table[group][team_1]["ga"] += result[team_2]
+        table[group][team_2]["ga"] += result[team_1]
+        table[group][team_1]["diff"] += result[team_1] - result[team_2]
+        table[group][team_2]["diff"] += result[team_2] - result[team_1]
+
+        if result[team_1] > result[team_2]:
+            table[group][team_1]["won"] += 1
+            table[group][team_2]["lost"] += 1
+            table[group][team_1]["points"] += 3
+
+        elif result[team_2] > result[team_1]:
+            table[group][team_2]["won"] += 1
+            table[group][team_1]["lost"] += 1
+            table[group][team_2]["points"] += 3
+
+        else:
+            table[group][team_1]["draw"] += 1
+            table[group][team_2]["draw"] += 1
+            table[group][team_2]["points"] += 1
+            table[group][team_1]["points"] += 1
