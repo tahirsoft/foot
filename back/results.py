@@ -83,3 +83,22 @@ def group_stats(group: str):
             table[group][team_2]["draw"] += 1
             table[group][team_2]["points"] += 1
             table[group][team_1]["points"] += 1
+
+
+def final_staging():
+    mini_table = {}
+
+    for group_name in groups_names:
+        place = 1
+        group_stats(group_name)
+        group = table[group_name]
+
+        for k, v in sorted(group.items(),
+                           key=lambda x: (x[1]['points'], x[1]['diff']),
+                           reverse=True):
+
+            if place < 3:
+                mini_table[group_name + str(place)] = k
+                place += 1
+
+    return mini_table
