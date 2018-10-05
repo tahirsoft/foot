@@ -13,7 +13,7 @@ body {
 
 span {
     font-family: 'Forum', 'Yeseva One', Helvetica, cursive;
-    color: rgb(201, 238, 224);
+    color: white;
 }
 
 /* RESET */
@@ -29,7 +29,7 @@ span {
     min-width: 420px;
     margin: 40px auto;
     font-family: 'Forum', 'Yeseva One', Helvetica, cursive;
-    color: rgb(201, 238, 224);
+    color: white;
 }
 
 /* Style the tabs */
@@ -37,6 +37,8 @@ span {
     overflow: hidden;
     margin-left: 20px;
     margin-bottom: -2px; // hide bottom border
+    background: #0078c9;
+    opacity: 0.7;
 }
 
 .tabs ul {
@@ -51,7 +53,7 @@ span {
     transition: background-color 0.2s;
     border: 1px solid #ccc;
     border-right: none;
-    background-color: #f1f1f1;
+    background-color: #0078c9;
     border-radius: 10px 10px 0 0;
     font-weight: bold;
 }
@@ -78,7 +80,9 @@ span {
     padding: 30px;
     border: 1px solid #ccc;
     border-radius: 10px;
-    box-shadow: 3px 3px 6px #e1e1e1
+    box-shadow: 3px 3px 6px #e1e1e1;
+    background: #0078c9;
+    opacity: 0.7;
 }
 
 button {
