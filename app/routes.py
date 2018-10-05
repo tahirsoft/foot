@@ -1,6 +1,10 @@
+import ast
+
 from flask import render_template
 from app import app
-import ast
+
+from app.group import default_teams
+from app.results import final_stage_games
 
 
 @app.route('/')
@@ -10,7 +14,8 @@ def home_page():
 
 @app.route('/worldcup')
 def worldcup():
-    return render_template('foot.html')
+    results = final_stage_games(default_teams)
+    return render_template('foot.html', results=results)
 
 
 @app.route('/countries')
