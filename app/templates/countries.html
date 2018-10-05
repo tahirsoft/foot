@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="">
+    {% for country, data in countries_data.items() %}
+    <button type="button" class="btn btn-outline-primary btn-sm">
+        <img src="{{ data["flag"] }}">
+        <span>{{ country }} - {{ data["points"] }}</span>
+
+    </button>
+    {% endfor %}
+</div>
+
+{% endblock %}

@@ -11,15 +11,12 @@ var app = new Vue({
             { text: 'Content for Group F', value: 'F'},
             { text: 'Content for Group G', value: 'G'},
             { text: 'Content for Group H', value: 'H'},
-            { text: 'Content for Stage 1/8', value: '1/8'},
-            { text: 'Content for Stage 1/4', value: '1/4'},
-            { text: 'Content for Stage 1/2', value: '1/2'},
-            { text: 'Content for Final', value: 'final'},
+            { text: 'Content for Finalstage', value: 'final'},
         ]
     },
     computed: {
         setValue: function () {
-            
+
         }
     }
 })

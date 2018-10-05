@@ -86,7 +86,7 @@ def group_stats(group: str):
             table[group][team_1]["points"] += 1
 
 
-def final_staging():
+def final_staging() -> list:
     mini_table = {}
 
     for group_name in groups_names:

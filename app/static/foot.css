@@ -1,6 +1,21 @@
 /* Import Google Font */
 @import url(https://fonts.googleapis.com/css?family=Nunito+Sans);
 
+body {
+    background-image: url(images/3.jpeg);
+    background-repeat:no-repeat;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
+    background-position:center;
+}
+
+span {
+    font-family: 'Forum', 'Yeseva One', Helvetica, cursive;
+    color: rgb(201, 238, 224);
+}
+
 /* RESET */
 * {
   box-sizing: border-box;
@@ -13,8 +28,8 @@
     /* max-width: 620px; */
     min-width: 420px;
     margin: 40px auto;
-    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
-    color: #888;
+    font-family: 'Forum', 'Yeseva One', Helvetica, cursive;
+    color: rgb(201, 238, 224);
 }
 
 /* Style the tabs */
@@ -64,4 +79,11 @@
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 3px 3px 6px #e1e1e1
+}
+
+button {
+    background-color: #343a40;
+    color: white;
+    margin: 10px;
+    width: 250px;
 }

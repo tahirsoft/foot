@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="app">
+    <div id="tabs" class="container">
+
+        <div class="tabs">
+            <a v-on:click="activetab='A'" v-bind:class="[ activetab === 'A' ? 'active' : '' ]">Group A</a>
+            <a v-on:click="activetab='B'" v-bind:class="[ activetab === 'B' ? 'active' : '' ]">Group B</a>
+            <a v-on:click="activetab='C'" v-bind:class="[ activetab === 'C' ? 'active' : '' ]">Group C</a>
+            <a v-on:click="activetab='D'" v-bind:class="[ activetab === 'D' ? 'active' : '' ]">Group D</a>
+            <a v-on:click="activetab='E'" v-bind:class="[ activetab === 'E' ? 'active' : '' ]">Group E</a>
+            <a v-on:click="activetab='F'" v-bind:class="[ activetab === 'F' ? 'active' : '' ]">Group F</a>
+            <a v-on:click="activetab='G'" v-bind:class="[ activetab === 'G' ? 'active' : '' ]">Group G</a>
+            <a v-on:click="activetab='H'" v-bind:class="[ activetab === 'H' ? 'active' : '' ]">Group H</a>
+            <a v-on:click="activetab='final'" v-bind:class="[ activetab === 'final' ? 'active' : '' ]">FinalStage</a>
+        </div>
+
+        <div class="content">
+            <div v-if="activetab === 'A'" class="tabcontent">
+                Content for Group A
+            </div>
+            <div v-if="activetab === 'B'" class="tabcontent">
+                Content for Group B
+            </div>
+            <div v-if="activetab === 'C'" class="tabcontent">
+                Content for Group C
+            </div>
+            <div v-if="activetab === 'D'" class="tabcontent">
+                Content for Group D
+            </div>
+            <div v-if="activetab === 'E'" class="tabcontent">
+                Content for Group E
+            </div>
+            <div v-if="activetab === 'F'" class="tabcontent">
+                Content for Group F
+            </div>
+            <div v-if="activetab === 'G'" class="tabcontent">
+                Content for Group G
+            </div>
+            <div v-if="activetab === 'H'" class="tabcontent">
+                Content for Group H
+            </div>
+            <div v-if="activetab === 'final'" class="tabcontent">
+                Content for Final Stage
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
