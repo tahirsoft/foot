@@ -1,12 +1,5 @@
-import ast
-
 from collections import deque
 
-
-with open('../data.txt', 'r') as f:
-    countries = f.read()
-
-countries = ast.literal_eval(countries)
 
 final_grid = [['A1', 'B2'], ['C1', 'D2'], ['E1', 'F2'], ['G1', 'H2'],
               ['B1', 'A2'], ['D1', 'C2'], ['F1', 'E2'], ['H1', 'G2']]
