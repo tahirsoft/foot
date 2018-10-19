@@ -85,6 +85,10 @@ span {
     opacity: 0.7;
 }
 
+.red {
+    background: red;
+}
+
 button {
     background-color: #343a40;
     color: white;

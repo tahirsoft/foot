@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="">
+<div class="mx-auto" style="width: 66%">
     {% for country, data in countries_data.items() %}
-    <button type="button" class="btn btn-outline-primary btn-sm">
+    <button type="button" class="btn btn-outline-primary" @click="isRed = !isRed" :class="addColor">
         <img src="{{ data["flag"] }}">
         <span>{{ country }} - {{ data["points"] }}</span>
 

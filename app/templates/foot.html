@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div id="app">
+<div>
     <div id="tabs" class="container">
         <div class="tabs">
             {% for group in results[0].keys() %}
@@ -10,7 +10,7 @@
             <a v-on:click="activetab='final'" v-bind:class="[ activetab === 'final' ? 'active' : '' ]">FinalStage</a>
         </div>
         <div class="content">
-            {% for group in ['results[0].keys()'] %}
+            {% for group in results[0].keys() %}
             <div v-if="activetab === '{{ group }}'" class="tabcontent">
                 <table class="table table-borderless">
                     <thead>

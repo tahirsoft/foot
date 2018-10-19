@@ -1,6 +1,8 @@
 var app = new Vue({
     el: '#app',
+    delimiters: ['[[',']]'],
     data: {
+        isRed: false,
         activetab: 'A',
         tabs: [
             { text: 'Content forzdfgsdgfdsg Group A', value: 'A'},
@@ -14,9 +16,12 @@ var app = new Vue({
             { text: 'Content for Finalstage', value: 'final'},
         ]
     },
-    computed: {
-        setValue: function () {
 
+    computed: {
+        addColor: function() {
+            return {
+                red: this.isRed
+            };
         }
     }
 })
