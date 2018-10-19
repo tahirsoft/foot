@@ -1,10 +1,10 @@
-import numpy as np
 import ast
-
 from random import shuffle
 from itertools import combinations
 
-from app.group import groups_names, final_grid, grouping
+import numpy as np
+
+from app.group import final_grid, grouping
 
 
 def goals() -> list:
@@ -26,9 +26,9 @@ def chance_to_win(team_1: str, team_2: str) -> tuple:
 
     team_1_points = int(countries_data[team_1]["points"])
     team_2_points = int(countries_data[team_2]["points"])
-    sum_points = team_1_points + team_2_points
-    team_1_chance = round(team_1_points/sum_points, 2)
-    team_2_chance = round(team_2_points/sum_points, 2)
+    sum_points = team_1_points ** 10 + team_2_points ** 10
+    team_1_chance = round(team_1_points**10/sum_points, 2)
+    team_2_chance = round(team_2_points**10/sum_points, 2)
     return team_1_chance, team_2_chance
 
 
@@ -38,7 +38,6 @@ def game(team_1: str, team_2: str) -> dict:
 
     if p1 >= p2:
         score = sorted(score, reverse=True)
-
     else:
         score = sorted(score)
 
@@ -61,7 +60,7 @@ def group_games_results(group: str) -> list:
 
 def group_stats(team_list: list) -> dict:
     table = grouping(team_list)
-    for group in groups_names:
+    for group in table:
         for result in group_games_results(table[group]):
             team_1, team_2 = result.keys()
             table[group][team_1]["games"] += 1
@@ -93,14 +92,21 @@ def group_stats(team_list: list) -> dict:
 
 def final_staging(team_list: list) -> tuple:
     mini_table = {}
+    sorted_table = {}
     table = group_stats(team_list)
-    for group_name in groups_names:
-        place = 1
-        group = table[group_name]
 
-        for k, v in sorted(group.items(),
-                           key=lambda x: (x[1]['points'], x[1]['diff']),
+    for group_name in table:
+        place = 1
+
+        for k, v in sorted(table[group_name].items(),
+                           key=lambda x:
+                               (x[1]['points'], x[1]['diff'], x[1]['gf']),
                            reverse=True):
+            try:
+                sorted_table[group_name].update({k: v})
+            except KeyError:
+                sorted_table[group_name] = {k: v}
+
 
             if place < 3:
                 mini_table[group_name + str(place)] = k
@@ -110,7 +116,7 @@ def final_staging(team_list: list) -> tuple:
         [[mini_table[i[0]], mini_table[i[1]]] for i in final_grid],
         []
     )
-    return table, teams
+    return sorted_table, teams
 
 
 def final_stage_results(teams_grid: list) -> dict:
