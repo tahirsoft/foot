@@ -8,6 +8,7 @@ $ git clone https://github.com/tahirsoft/foot.git
 $ pip install pipenv
 $ cd foot
 $ pipenv sync
+$ pipenv shell 
 $ export FLASK_APP=foot.py
 $ flask run
 ```
